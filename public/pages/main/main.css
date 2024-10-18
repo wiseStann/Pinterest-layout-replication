@@ -1,0 +1,34 @@
+.feed__layout-container {
+	width: 100%;
+	height: 100%;
+	display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-gap: 20px; */
+	justify-content: center;
+	align-items: center;
+	background-color: antiquewhite;
+}
+
+.pin__image {
+	max-width: 200px;
+	max-height: 250px;
+	border-radius: 15px;
+}
+
+.pin__author_container {
+	display: flex;
+	align-items: center;
+	margin: 10px;
+}
+
+.pin__author_container p {
+	font-family: 'Inter';
+}
+
+.pin__author_avatar {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	object-fit: cover;
+	clip-path: circle();
+}

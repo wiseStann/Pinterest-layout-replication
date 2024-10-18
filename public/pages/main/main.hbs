@@ -1,0 +1,13 @@
+<div class="feed__layout-container">
+	{{#each pins}}
+		<div class="pin__content-container">
+			<div class="pin__image-container">
+				<img class="pin__image" src="{{this.MediaUrl}}">
+			</div>
+			<div class="pin__author_container">
+				<img class="pin__author_avatar" src="{{this.AuthorAvatar}}">
+				<p>{{{this.AuthorName}}}</p>
+			</div>
+		</div>
+	{{/each}}
+</div>

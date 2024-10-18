@@ -1,8 +1,10 @@
 'use strict'
 
-export default class App {
-    #root
-    #pins
+import {MainPage as Feed} from './pages/main/main.js';
+
+export class App {
+    #root;
+    #pins;
 
     constructor(root, pins) {
         this.#root = root;
@@ -10,6 +12,12 @@ export default class App {
     }
 
     renderLayoutPage(route) {
-        this.#root.InnerH
+        if (route === '/') {
+            const mainPage = new Feed(this.#root);
+            mainPage.renderTemplate(this.#pins);
+        }
+        else {
+            this.#root.innerHTML = "<h1>Unknown page</h1>";
+        }
     }
 };
