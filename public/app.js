@@ -3,21 +3,22 @@
 import {MainPage as Feed} from './pages/main/main.js';
 
 export class App {
-    #root;
+    #parent;
     #pins;
 
-    constructor(root, pins) {
-        this.#root = root;
+    constructor(parent, pins) {
+        this.#parent = parent;
         this.#pins = pins;
     }
 
     renderLayoutPage(route) {
         if (route === '/') {
-            const mainPage = new Feed(this.#root);
-            mainPage.renderTemplate(this.#pins);
+            const mainPage = new Feed(this.#parent, this.#pins);
+            mainPage.renderTemplate();
+            mainPage.buildLayout();
         }
         else {
-            this.#root.innerHTML = "<h1>Unknown page</h1>";
+            this.#parent.innerHTML = "<h1>Unknown page</h1>";
         }
     }
 };

@@ -1,28 +1,21 @@
 .feed__layout-container {
 	width: 100%;
 	height: 100%;
-	display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* grid-gap: 20px; */
-	justify-content: center;
-	align-items: center;
-	background-color: antiquewhite;
 }
 
-.pin__image {
-	max-width: 200px;
-	max-height: 250px;
-	border-radius: 15px;
+div[id^=pin__content-container] {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+}
+
+img[class^=pin__image] {
+	border-radius: 40px;
 }
 
 .pin__author_container {
 	display: flex;
 	align-items: center;
-	margin: 10px;
-}
-
-.pin__author_container p {
-	font-family: 'Inter';
 }
 
 .pin__author_avatar {
@@ -31,4 +24,8 @@
 	border-radius: 50%;
 	object-fit: cover;
 	clip-path: circle();
+}
+
+.pin__author_container p {
+	margin-left: 10px;
 }
